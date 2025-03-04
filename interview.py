@@ -33,8 +33,6 @@ def main(arg1, arg2, arg3):
 
 
 def find_input(expected_hash, salt):
-    # 这里可以尝试各种可能的输入
-    # 为了演示，我们可以尝试一些简单的字符串
     test_inputs = ["foo", "bar", "baz", "hoge", "fuga", "piyo"]
     for test in test_inputs:
         if hash_func(test + salt) == expected_hash:
@@ -50,7 +48,6 @@ expected_hashes = [
     "0538aaaaed903470c4a58eccbea3ff62fc74368514d3d058444fa41a0b00957b"
 ]
 
-# 只需要一个循环
 for i, hash_value in enumerate(expected_hashes):
     result = find_input(hash_value, salt)
     if result:
@@ -70,7 +67,6 @@ def find_hash_with_prefix(prefix="000"):
         number += 1
 
 print("--------------------------------question2--------------------------------")
-# 寻找哈希值以"000"开头的输入
 input_str, hash_result = find_hash_with_prefix("000")
 print(f"input: {input_str}")
 print(f"output: {hash_result}")
@@ -84,8 +80,3 @@ print(hash_func("886"))
 
 a = [1, 2, 3]
 
-def b():
-    a.append(4)
-
-b()
-print(a)  # 输出: [1, 2, 3, 4]
