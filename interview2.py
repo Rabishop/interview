@@ -111,7 +111,6 @@ class TestEncryptionWithSalt:
         expected_plaintext = "hello world"
         password = "password"
         encryption = EncryptionWithSalt(salt, fixed_iv)
-        # 以下を記述
         
         ciphertext = encryption.encrypt(expected_plaintext, password)
         decrypted_text = encryption.decrypt(ciphertext, password)
@@ -128,7 +127,6 @@ class TestEncryptionWithSalt:
         password2 = "password"
         password3 = "password1"
         encryption = EncryptionWithSalt(salt, fixed_iv)
-        # 以下を記述
         
         ciphertext1 = encryption.encrypt(expected_plaintext, password1)
         print("ciphertext1:", ciphertext1)
